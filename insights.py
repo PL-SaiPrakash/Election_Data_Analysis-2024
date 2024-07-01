@@ -5,6 +5,13 @@ import seaborn as sns
 # Load the dataset
 df = pd.read_excel('combined_report.xlsx')
 
+# Convert columns to numeric, forcing errors to NaN
+df['Total Votes'] = pd.to_numeric(df['Total Votes'], errors='coerce')
+df['Margin'] = pd.to_numeric(df['Margin'], errors='coerce')
+
+# Drop rows with NaN values in numeric columns if necessary
+df = df.dropna(subset=['Total Votes', 'Margin'])
+
 # Descriptive statistics
 total_votes_stats = df['Total Votes'].describe()
 margin_stats = df['Margin'].describe()
@@ -75,5 +82,3 @@ plt.ylabel('Average Winning Margin')
 plt.xticks(rotation=45)
 plt.tight_layout()
 plt.show()
-
-
