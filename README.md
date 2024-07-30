@@ -1,4 +1,5 @@
-# Kalvium_Data_Analyst
+# Election Result Analysis
+
 
 1. The file 'Generate_report.py' generates  42 individual files with .xlsx extension. Each single file represents single party.
 2. After generating the individual files these are combined to a file named 'combined_report.xlsx' which contains columns :-
